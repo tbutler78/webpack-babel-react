@@ -3,6 +3,7 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 const paths = {
     DIST: path.resolve(__dirname, 'dist'),
@@ -21,7 +22,8 @@ plugins: [
     new HtmlWebpackPlugin({
         template: path.join(paths.SRC, 'index.html')
     }),
-    new ExtractTextPlugin('style.bundle.css')
+    new ExtractTextPlugin('style.bundle.css'),
+    new ManifestPlugin()
 ],
 
 module: {
