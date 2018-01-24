@@ -6,6 +6,9 @@ import "../css/style.css";
 import keenImage from "../assets/keen.png";
 import { setInterval, clearInterval } from "timers";
 
+console.log(process);
+console.log("AWS_SECRET_KEY:", process.env.AWS_SECRET_KEY);
+console.log("AWS_ACCESS_KEY_ID:", process.env.AWS_ACCESS_KEY_ID);
 function formatName(user) {
   return user.firstName + " " + user.lastName;
 }
@@ -87,6 +90,7 @@ class  Clock extends React.Component {
     }
 
     tick(){
+       
         this.setState({
             date: new Date()
         });
